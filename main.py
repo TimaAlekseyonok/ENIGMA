@@ -94,40 +94,21 @@ rotors = Roter(position_roter1, position_roter2, position_roter3)
 
 while True:
     try:
-        what_do_you_want = input('Encode or Decode (en or de): ')
-        if what_do_you_want.upper() == 'ENCODE' or what_do_you_want.upper() == 'EN' or what_do_you_want == '1':
-            encode_m = input('Input message (only latin alphabet): ')
-            encode_massage = []
+        encode_m = input('Input message (only latin alphabet): ')
+        encode_massage = []
 
-            for symbol in encode_m.upper():
-                if symbol == ' ':
-                    encode_massage.append(symbol)
-                    rotors.smena_rotera()
-                else:
-                    encode = travel_through_rotors(symbol)
-                    encode_massage.append(encode)
-                    rotors.smena_rotera()
+        for symbol in encode_m.upper():
+            if symbol == ' ':
+                encode_massage.append(symbol)
+                rotors.smena_rotera()
+            else:
+                encode = travel_through_rotors(symbol)
+                encode_massage.append(encode)
+                rotors.smena_rotera()
 
-            print(''.join(encode_massage))
-            break
+        print(''.join(encode_massage))
+        break
 
-        elif what_do_you_want.upper() == 'DECODE' or what_do_you_want.upper() == 'DE' or what_do_you_want == '2':
-            decode_m = input('Decode (only latin alphabet): ')
-            decode_massage = []
-
-            for de_symbol in decode_m.upper():
-                if de_symbol == ' ':
-                    decode_massage.append(de_symbol)
-                    rotors.smena_rotera()
-                else:
-                    decode = travel_through_rotors(de_symbol)
-                    decode_massage.append(decode)
-                    rotors.smena_rotera()
-            print(''.join(decode_massage))
-            break
-
-        else:
-            print('You should choose what you want to Encode or Decode')
     except:
         break
 
