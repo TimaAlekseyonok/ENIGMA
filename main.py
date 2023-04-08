@@ -95,8 +95,8 @@ rotors = Roter(position_roter1, position_roter2, position_roter3)
 while True:
     try:
         what_do_you_want = input('Encode or Decode (en or de): ')
-        if what_do_you_want.upper() == 'ENCODE' or what_do_you_want.upper() == 'EN':
-            encode_m = input('Input message: ')
+        if what_do_you_want.upper() == 'ENCODE' or what_do_you_want.upper() == 'EN' or what_do_you_want == '1':
+            encode_m = input('Input message (only latin alphabet): ')
             encode_massage = []
 
             for symbol in encode_m.upper():
@@ -111,8 +111,8 @@ while True:
             print(''.join(encode_massage))
             break
 
-        elif what_do_you_want.upper() == 'DECODE' or what_do_you_want.upper() == 'DE':
-            decode_m = input('Decode: ')
+        elif what_do_you_want.upper() == 'DECODE' or what_do_you_want.upper() == 'DE' or what_do_you_want == '2':
+            decode_m = input('Decode (only latin alphabet): ')
             decode_massage = []
 
             for de_symbol in decode_m.upper():
